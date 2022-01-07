@@ -3,17 +3,17 @@ const Discord = require('discord.js');
 const Bot = require('./bot.js');
 
 /**
- * 
- * @param {Discord.Message | Discord.Interaction} message 
- * @param {string[]} args 
- * @param {Bot} bot 
+ *
+ * @param {Discord.Message | Discord.Interaction} message
+ * @param {string[]} args
+ * @param {Bot} bot
  */
 function RunFunction(message, args, bot) {}
 
 class Command {
     /**
      * @typedef {{name: string, description: string, run: RunFunction}} CommandOptions
-     * @param {CommandOptions} options 
+     * @param {CommandOptions} options
      */
     constructor(options) {
         this.name = options.name;

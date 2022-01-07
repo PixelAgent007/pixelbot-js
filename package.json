@@ -1,25 +1,29 @@
 {
-  "name": "pixelbot.js",
-  "version": "1.0.0",
-  "main": "src/index.js",
-  "keywords": [],
-  "author": "Oskar Manhart",
-  "license": "ISC",
-  "scripts": {
-    "start": "node src/index.js"
-  },
-  "dependencies": {
-    "discord.js": "13.3.1",
-    "dotenv": "^10.0.0",
-    "node-fetch": "^2.6.6"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/PixelAgent007/pixelbot-js.git"
-  },
-  "bugs": {
-    "url": "https://github.com/PixelAgent007/pixelbot-js/issues"
-  },
-  "homepage": "https://github.com/PixelAgent007/pixelbot-js#readme",
-  "description": ""
+    "name": "pixelbot.js",
+    "version": "1.0.0",
+    "main": "src/index.js",
+    "keywords": [],
+    "author": "Oskar Manhart",
+    "license": "ISC",
+    "scripts": {
+        "start": "node src/index.js"
+    },
+    "dependencies": {
+        "discord.js": "13.3.1",
+        "dotenv": "^10.0.0",
+        "node-fetch": "^2.6.6",
+        "quick.db": "^7.1.3"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com:PixelAgent007/pixelbot-js.git"
+    },
+    "bugs": {
+        "url": "https://github.com/PixelAgent007/pixelbot-js/issues"
+    },
+    "homepage": "https://github.com/PixelAgent007/pixelbot-js#readme",
+    "description": "",
+    "devDependencies": {
+        "prettier": "^2.5.1"
+    }
 }
