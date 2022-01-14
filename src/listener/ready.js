@@ -1,9 +1,9 @@
 module.exports = {
-    name: 'ready',
+    name: "ready",
     once: true,
     execute() {
         // Clear console
         console.clear();
-        console.log('Bot connected to Discord!');
+        console.log("Bot connected to Discord!");
     },
 };

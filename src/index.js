@@ -1,10 +1,10 @@
 // Imports
-const Bot = require('./lib/bot.js');
-const Command = require('./lib/bot.js');
-const fs = require('fs');
-const dotenv = require('dotenv');
+const Bot = require("./lib/bot.js");
+const Command = require("./lib/bot.js");
+const fs = require("fs");
+const dotenv = require("dotenv");
 
-const db = require('quick.db');
+const db = require("quick.db");
 
 // Setting up dotenv
 dotenv.config();
@@ -17,8 +17,8 @@ const prefix = process.env.PREFIX;
 const bot = new Bot();
 
 // Building command handler
-fs.readdirSync('./src/commands')
-    .filter((file) => file.endsWith('.js'))
+fs.readdirSync("./src/commands")
+    .filter((file) => file.endsWith(".js"))
     .forEach((file) => {
         /**
          * @type {Command}
@@ -30,19 +30,19 @@ fs.readdirSync('./src/commands')
 
 // Building Event handler
 const eventFiles = fs
-    .readdirSync('./src/listener')
-    .filter((file) => file.endsWith('.js'));
+    .readdirSync("./src/listener")
+    .filter((file) => file.endsWith(".js"));
 
 for (const file of eventFiles) {
     const event = require(`./listener/${file}`);
     if (event.once) {
         bot.once(event.name, (bot, ...args) => event.execute(...args));
     } else {
-        bot.on(event.name, (bot, ...args) => event.execute(...args));
+        bot.on(event.name, (...args) => event.execute(...args));
     }
 }
 
-bot.on('messageCreate', (message) => {
+bot.on("messageCreate", (message) => {
     // Return if author is bot or message doesnt start w/ prefix
     if (message.author.bot) return;
     if (!message.content.startsWith(prefix)) return;

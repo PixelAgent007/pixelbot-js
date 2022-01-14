@@ -1,6 +1,6 @@
 // Imports
-const Discord = require('discord.js');
-const Command = require('./command.js');
+const Discord = require("discord.js");
+const Command = require("./command.js");
 
 // Defining Intents
 const intents = new Discord.Intents(32767);

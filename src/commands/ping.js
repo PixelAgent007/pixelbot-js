@@ -1,8 +1,8 @@
 // Imports
-const Command = require('../lib/command.js');
+const Command = require("../lib/command.js");
 
 module.exports = new Command({
-    name: 'ping',
+    name: "ping",
     description: "Checks the bot's connection to the discord servers.",
 
     async run(message, args, bot) {

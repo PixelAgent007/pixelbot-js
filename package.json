@@ -9,6 +9,7 @@
         "start": "node src/index.js"
     },
     "dependencies": {
+        "bad-words": "^3.0.4",
         "discord.js": "13.3.1",
         "dotenv": "^10.0.0",
         "node-fetch": "^2.6.6",
@@ -22,8 +23,5 @@
         "url": "https://github.com/PixelAgent007/pixelbot-js/issues"
     },
     "homepage": "https://github.com/PixelAgent007/pixelbot-js#readme",
-    "description": "",
-    "devDependencies": {
-        "prettier": "^2.5.1"
-    }
+    "description": ""
 }

@@ -1,23 +1,23 @@
 // Imports
-const Command = require('../lib/command.js');
-const discord = require('discord.js');
-const dotenv = require('dotenv');
-const fetch = require('node-fetch');
+const Command = require("../lib/command.js");
+const discord = require("discord.js");
+const dotenv = require("dotenv");
+const fetch = require("node-fetch");
 
 // Setting up dotenv
 dotenv.config();
 
 module.exports = new Command({
-    name: 'unmute',
-    description: 'Unmutes a member.',
+    name: "unmute",
+    description: "Unmutes a member.",
 
     async run(message, args, bot) {
         const error = new discord.MessageEmbed()
-            .setColor('RED')
+            .setColor("RED")
             .setTitle(
-                ':no_entry: Syntax: ' +
+                ":no_entry: Syntax: " +
                     process.env.PREFIX +
-                    'unmute <member> [reason]'
+                    "unmute <member> [reason]"
             );
 
         if (args.length != 2) {
@@ -29,33 +29,33 @@ module.exports = new Command({
             message.mentions.members.first() ||
             message.guild.members.cache.get(args[0]);
         const embed = new discord.MessageEmbed()
-            .setColor('GREEN')
-            .setTitle(':white_check_mark: Member unmuted successfully.');
+            .setColor("GREEN")
+            .setTitle(":white_check_mark: Member unmuted successfully.");
 
         const errorEmbed = new discord.MessageEmbed()
-            .setColor('RED')
+            .setColor("RED")
             .setTitle(
-                ':no_entry: An error has occured. Please try again later or contact PixelAgent007#3062.'
+                ":no_entry: An error has occured. Please try again later or contact PixelAgent007#3062."
             );
 
         const url =
-            'https://discord.com/api/v9/guilds/' +
+            "https://discord.com/api/v9/guilds/" +
             message.guild.id +
-            '/members/' +
+            "/members/" +
             member.id;
 
         fetch(url, {
-            method: 'GET',
+            method: "GET",
             headers: new fetch.Headers({
-                Accept: 'application/json',
-                'Content-Type': 'application/json',
-                Authorization: 'Bot ' + process.env.TOKEN,
+                Accept: "application/json",
+                "Content-Type": "application/json",
+                Authorization: "Bot " + process.env.TOKEN,
             }),
         })
             .then((res) => res.text())
             .then((data) => {
                 if (JSON.parse(data).communication_disabled_until == null) {
-                    error.setTitle(':no_entry: Member not muted.');
+                    error.setTitle(":no_entry: Member not muted.");
                     message.reply({ embeds: [error] });
                     return;
                 } else {
@@ -69,12 +69,12 @@ module.exports = new Command({
                             communication_disabled_until: null,
                         };
                         fetch(url, {
-                            method: 'PATCH',
+                            method: "PATCH",
                             body: JSON.stringify(data),
                             headers: new fetch.Headers({
-                                Accept: 'application/json',
-                                'Content-Type': 'application/json',
-                                Authorization: 'Bot ' + process.env.TOKEN,
+                                Accept: "application/json",
+                                "Content-Type": "application/json",
+                                Authorization: "Bot " + process.env.TOKEN,
                             }),
                         }).then((res) => {
                             if (res.status == 200)
@@ -82,7 +82,7 @@ module.exports = new Command({
                             else message.reply({ embeds: [errorEmbed] });
                         });
                     } else {
-                        error.setTitle(':no_entry: Member not muted.');
+                        error.setTitle(":no_entry: Member not muted.");
                         message.reply({ embeds: [error] });
                         return;
                     }
