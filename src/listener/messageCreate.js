@@ -235,16 +235,24 @@ Your every thought and motion contributes to the beauty of the universe.
 You make me want to frolic in a field.
 `
 
-const Filter = require('bad-words');
-const filter = new Filter();
+const filter = require('swearjar');
+const filter2 = require('leo-profanity');
+filter2.loadDictionary('en');
+const isprofanity = require('isprofanity');
+
+function filter3(string) {
+    isprofanity(string, function(t) {
+       return t;
+    });
+}
 
 module.exports = {
     name: 'messageCreate',
     once: false,
     execute(message) {
-        if (message.author.id != 487247155741065229) {
+        if (message.author.id != 480007247155741065229) {
             const contents = message.content;
-            if (filter.isProfane(contents)) {
+            if (filter.profane(contents) || filter2.check(contents) || filter3(contents)) {
                 message.delete();
 
                 message.channel.fetchWebhooks().then((webhooks) => {
