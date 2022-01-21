@@ -246,10 +246,16 @@ function filter3(string) {
     });
 }
 
+// Setting up dotenv
+dotenv.config();
+
 module.exports = {
     name: 'messageCreate',
     once: false,
     execute(message) {
+        if (message.author.bot) return;
+        if (message.content.startsWith(process.env.PREFIX)) return;
+
         if (message.author.id != 487247155741065229) {
             const contents = message.content;
             const nospaces = contents.replaceAll(' ','');
