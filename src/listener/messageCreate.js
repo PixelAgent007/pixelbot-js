@@ -235,6 +235,8 @@ Your every thought and motion contributes to the beauty of the universe.
 You make me want to frolic in a field.
 `
 
+const dotenv = require('dotenv');
+
 const filter = require('swearjar');
 const filter2 = require('leo-profanity');
 filter2.loadDictionary('en');
