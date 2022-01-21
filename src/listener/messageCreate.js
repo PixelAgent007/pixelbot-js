@@ -250,11 +250,10 @@ module.exports = {
     name: 'messageCreate',
     once: false,
     execute(message) {
-        if (message.author.id != 480007247155741065229) {
+        if (message.author.id != 487247155741065229) {
             const contents = message.content;
-            if (filter.profane(contents) || filter2.check(contents) || filter3(contents)) {
-                message.delete();
-
+            const nospaces = contents.replaceAll(' ','');
+            if (filter.profane(contents) || filter2.check(contents) || filter3(contents) || filter.profane(nospaces) || filter2.check(nospaces) || filter3(nospaces)) {
                 message.channel.fetchWebhooks().then((webhooks) => {
                     if (webhooks.size > 0) {
                         webhook = webhooks.first();
@@ -270,6 +269,7 @@ module.exports = {
                     webhook.send(rnd);
                 });
 
+                message.delete();
             }
         }
     },
