@@ -4,8 +4,6 @@ const Command = require("./lib/bot.js");
 const fs = require("fs");
 const dotenv = require("dotenv");
 
-const db = require("quick.db");
-
 // Setting up dotenv
 dotenv.config();
 
