@@ -1,6 +1,7 @@
 // Imports
 const Bot = require("./lib/bot.js");
 const Command = require("./lib/bot.js");
+const Listener = require("./lib/listener.js");
 const fs = require("fs");
 const dotenv = require("dotenv");
 
@@ -14,6 +15,23 @@ const prefix = process.env.PREFIX;
 // Defining bot
 const bot = new Bot();
 
+// Building Event handler
+const eventFiles = fs
+    .readdirSync("./src/listener")
+    .filter((file) => file.endsWith(".js"))
+    .forEach((file) => {
+        /**
+         * @type {Listener}
+         */
+        const event = require(`./listener/${file}`);
+        console.log(`Listener ${event.name} of type ${event.type} loaded successfully!`);
+        if (event.once) {
+            bot.once(event.type, (...args) => event.run(...args));
+        } else {
+            bot.on(event.type, (...args) => event.run(...args));
+        }
+    });
+
 // Building command handler
 fs.readdirSync("./src/commands")
     .filter((file) => file.endsWith(".js"))
@@ -25,20 +43,6 @@ fs.readdirSync("./src/commands")
         console.log(`Command ${command.name} loaded successfully!`);
         bot.commands.set(command.name, command);
     });
-
-// Building Event handler
-const eventFiles = fs
-    .readdirSync("./src/listener")
-    .filter((file) => file.endsWith(".js"));
-
-for (const file of eventFiles) {
-    const event = require(`./listener/${file}`);
-    if (event.once) {
-        bot.once(event.name, (bot, ...args) => event.execute(...args));
-    } else {
-        bot.on(event.name, (...args) => event.execute(...args));
-    }
-}
 
 bot.on("messageCreate", (message) => {
     // Return if author is bot or message doesnt start w/ prefix

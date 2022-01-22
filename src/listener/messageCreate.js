@@ -235,6 +235,8 @@ Your every thought and motion contributes to the beauty of the universe.
 You make me want to frolic in a field.
 `
 
+// Imports
+const Listener = require("../lib/listener.js");
 const dotenv = require('dotenv');
 
 const filter = require('swearjar');
@@ -251,10 +253,11 @@ function filter3(string) {
 // Setting up dotenv
 dotenv.config();
 
-module.exports = {
-    name: 'messageCreate',
+module.exports = new Listener({
+    name: 'Automod Listener',
+    type: 'messageCreate',
     once: false,
-    execute(message) {
+    run(message) {
         if (message.author.bot) return;
         if (message.content.startsWith(process.env.PREFIX)) return;
 
@@ -281,4 +284,4 @@ module.exports = {
             }
         }
     },
-};
+});
