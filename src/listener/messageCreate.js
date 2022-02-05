@@ -252,6 +252,13 @@ function filter3(string) {
 
 let yogdAllowed = true;
 
+function shouldProcess(id) {
+    if (id == 685771268988993548 && yogdAllowed == true) return false;
+    if (id == 685771268988993548 && yogdAllowed == false) return true;
+    if (id == 487247155741065229) return false;
+    else return true;
+}
+
 // Setting up dotenv
 dotenv.config();
 
@@ -272,7 +279,7 @@ module.exports = new Listener({
             return;
         }
 
-        if (yogdAllowed && message.author.id != 685771268988993548 || message.author.id != 487247155741065229) {
+        if (shouldProcess(message.author.id)) {
             const contents = message.content;
             const nospaces = contents.replaceAll(' ','');
             if (filter.profane(contents) || filter2.check(contents) || filter3(contents) || filter.profane(nospaces) || filter2.check(nospaces) || filter3(nospaces)) {
