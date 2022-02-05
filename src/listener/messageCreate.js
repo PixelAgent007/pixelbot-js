@@ -250,7 +250,7 @@ function filter3(string) {
     });
 }
 
-const yogdAllowed = false;
+let yogdAllowed = false;
 
 // Setting up dotenv
 dotenv.config();
