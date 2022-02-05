@@ -250,6 +250,8 @@ function filter3(string) {
     });
 }
 
+const yogdAllowed = false;
+
 // Setting up dotenv
 dotenv.config();
 
@@ -261,7 +263,16 @@ module.exports = new Listener({
         if (message.author.bot) return;
         if (message.content.startsWith(process.env.PREFIX)) return;
 
-        if (message.author.id != 487247155741065229) {
+        if (message.content == "fine swear now yogd" && message.author.id == 487247155741065229) {
+            yogdAllowed = true;
+            return;
+        }
+        if (message.content == "be nice yogd" && message.author.id == 487247155741065229) {
+            yogdAllowed = false;
+            return;
+        }
+
+        if (yogdAllowed && message.author.id != 685771268988993548 || message.author.id != 487247155741065229) {
             const contents = message.content;
             const nospaces = contents.replaceAll(' ','');
             if (filter.profane(contents) || filter2.check(contents) || filter3(contents) || filter.profane(nospaces) || filter2.check(nospaces) || filter3(nospaces)) {
