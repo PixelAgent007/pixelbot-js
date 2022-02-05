@@ -12,9 +12,8 @@ module.exports = new Command({
     description: "Print out Rule " +  no + ".",
 
     async run(message, args, bot) {
-        await message.channel.send(`
-        **Rule ${no}: ${short}**
-        ${long}
+        await message.reply(`
+        **Rule ${no}: ${short}** ${long}
         `);
     }
 });
