@@ -250,6 +250,12 @@ function filter3(string) {
     });
 }
 
+// Allowlist
+const whitelisted = [
+    487247155741065229,
+    685771268988993548
+]
+
 // Setting up dotenv
 dotenv.config();
 
@@ -261,7 +267,7 @@ module.exports = new Listener({
         if (message.author.bot) return;
         if (message.content.startsWith(process.env.PREFIX)) return;
 
-        if (message.author.id != 487247155741065229) {
+        if (whitelisted.includes(message.author.id) != true) {
             const contents = message.content;
             const nospaces = contents.replaceAll(' ','');
             if (filter.profane(contents) || filter2.check(contents) || filter3(contents) || filter.profane(nospaces) || filter2.check(nospaces) || filter3(nospaces)) {
