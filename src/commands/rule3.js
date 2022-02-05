@@ -13,8 +13,7 @@ module.exports = new Command({
 
     async run(message, args, bot) {
         await message.channel.send(`
-        **Rule ${no}: ${short}**
-        ${long}
+        **Rule ${no}: ${short}** ${long}
         `);
     }
 });
