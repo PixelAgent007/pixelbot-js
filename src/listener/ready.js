@@ -7,7 +7,6 @@ module.exports = new Listener({
     once: true,
     run() {
         // Clear console
-        console.clear();
         console.log("Bot connected to Discord!");
     },
 });

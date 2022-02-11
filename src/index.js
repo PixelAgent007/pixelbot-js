@@ -12,6 +12,9 @@ dotenv.config();
 const token = process.env.TOKEN;
 const prefix = process.env.PREFIX;
 
+// Clearing console
+console.clear();
+
 // Defining bot
 const bot = new Bot();
 
