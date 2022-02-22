@@ -12,11 +12,11 @@ module.exports = new Command({
             .setTitle("Server Information")
             .setDescription("IP: `darkmoonsmp.tk`")
             .addFields(
-                { name: "Version: ", value: "1.18.1 @ Fabric 10.2" },
-                { name: "Manual Download: ", value: "https://l.darkmoonsmp.tk/manual", inline: true },
-                { name: "Curseforge: ", value: "https://l.darkmoonsmp.tk/curseforge", inline: true },
-                { name: "Technic: ", value: "https://l.darkmoonsmp.tk/technic", inline: true },
-                { name: "More help", value: "If you need help on installing the modpack, be free to ask in " + message.guild.channels.cache.get('906922845404274689').toString() }
+                { name: "Version: ", value: "1.18.1 @ Fabric 0.12.12 (Installer Version 10.2)" },
+                { name: "Manual Download: ", value: "https://l.oskar.global/manual", inline: true },
+                { name: "Curseforge: ", value: "https://l.oskar.global/curseforge", inline: true },
+                { name: "Technic: ", value: "https://l.oskar.global/technic", inline: true },
+                { name: "More help", value: "If you need help on installing the modpack, feel free to ask in " + message.guild.channels.cache.get('906922845404274689').toString() }
             );
         message.channel.send({embeds: [embed]});
     },
