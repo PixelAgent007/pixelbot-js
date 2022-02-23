@@ -10,10 +10,11 @@
     },
     "dependencies": {
         "discord.js": "13.3.1",
-        "node-fetch": "^2.6.6",
         "dotenv": "^10.0.0",
         "isprofanity": "^1.4.1",
         "leo-profanity": "^1.5.0",
+        "mcping-js": "^1.5.0",
+        "node-fetch": "^2.6.6",
         "swearjar": "^0.2.0"
     },
     "repository": {
