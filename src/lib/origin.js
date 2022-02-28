@@ -1,6 +1,6 @@
 // Imports
-const Power = require("./power.js");
-const { MessageEmbed } = require("discord.js");
+const Power = require('./power.js');
+const { MessageEmbed } = require('discord.js');
 
 class Origin {
     /**
@@ -24,36 +24,49 @@ class Origin {
     static getEmbed(origin) {
         let embed = new MessageEmbed()
             .setTitle(origin.name)
-            .setColor("RANDOM")
-            .addField("Impact: ", Origin.visualizeImpact(origin.impact))
-            .addField("Made by: ", origin.author)
-            .addField("Description: ", origin.description);
+            .setColor('RANDOM')
+            .addField('Impact: ', Origin.visualizeImpact(origin.impact))
+            .addField('Made by: ', origin.author)
+            .addField('Description: ', origin.description);
 
         let power;
-        origin.actives.forEach( (power) => {
-            embed.addField(":green_circle: " + power.name + " (Active) ", power.description)
+        origin.actives.forEach((power) => {
+            embed.addField(
+                ':green_circle: ' + power.name + ' (Active) ',
+                power.description
+            );
         });
 
-        origin.pros.forEach( (power) => {
-            embed.addField(":green_circle: " + power.name + " ", power.description)
+        origin.pros.forEach((power) => {
+            embed.addField(
+                ':green_circle: ' + power.name + ' ',
+                power.description
+            );
         });
 
-        origin.passives.forEach( (power) => {
-            embed.addField(":yellow_circle: " + power.name + " ", power.description)
+        origin.passives.forEach((power) => {
+            embed.addField(
+                ':yellow_circle: ' + power.name + ' ',
+                power.description
+            );
         });
 
-        origin.cons.forEach( (power) => {
-            embed.addField(":red_circle: " + power.name + " ", power.description)
+        origin.cons.forEach((power) => {
+            embed.addField(
+                ':red_circle: ' + power.name + ' ',
+                power.description
+            );
         });
 
-        if (origin.src != "") embed.setFooter("Source code: " + origin.src);
+        if (origin.src != '') embed.setFooter('Source code: ' + origin.src);
         return embed;
     }
 
     static visualizeImpact(impact) {
-        if (impact === 1) return ":green_circle:";
-        if (impact === 2) return ":yellow_circle: :yellow_circle:";
-        if (impact === 3) return ":orange_circle: :orange_circle: :orange_circle:";
+        if (impact === 1) return ':green_circle:';
+        if (impact === 2) return ':yellow_circle: :yellow_circle:';
+        if (impact === 3)
+            return ':orange_circle: :orange_circle: :orange_circle:';
     }
 }
 

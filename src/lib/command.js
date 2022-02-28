@@ -1,6 +1,6 @@
 // Imports
-const Discord = require("discord.js");
-const Bot = require("./bot.js");
+const Discord = require('discord.js');
+const Bot = require('./bot.js');
 
 /**
  *

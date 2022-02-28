@@ -1,9 +1,9 @@
 // Imports
-const Bot = require("./lib/bot.js");
-const Command = require("./lib/bot.js");
-const Listener = require("./lib/listener.js");
-const fs = require("fs");
-const dotenv = require("dotenv");
+const Bot = require('./lib/bot.js');
+const Command = require('./lib/bot.js');
+const Listener = require('./lib/listener.js');
+const fs = require('fs');
+const dotenv = require('dotenv');
 
 // Setting up dotenv
 dotenv.config();
@@ -20,14 +20,16 @@ const bot = new Bot();
 
 // Building Event handler
 const eventFiles = fs
-    .readdirSync("./src/listener")
-    .filter((file) => file.endsWith(".js"))
+    .readdirSync('./src/listener')
+    .filter((file) => file.endsWith('.js'))
     .forEach((file) => {
         /**
          * @type {Listener}
          */
         const event = require(`./listener/${file}`);
-        console.log(`Listener ${event.name} of type ${event.type} loaded successfully!`);
+        console.log(
+            `Listener ${event.name} of type ${event.type} loaded successfully!`
+        );
         if (event.once) {
             bot.once(event.type, (...args) => event.run(...args));
         } else {
@@ -36,8 +38,8 @@ const eventFiles = fs
     });
 
 // Building command handler
-fs.readdirSync("./src/commands")
-    .filter((file) => file.endsWith(".js"))
+fs.readdirSync('./src/commands')
+    .filter((file) => file.endsWith('.js'))
     .forEach((file) => {
         /**
          * @type {Command}
@@ -47,7 +49,7 @@ fs.readdirSync("./src/commands")
         bot.commands.set(command.name, command);
     });
 
-bot.on("messageCreate", (message) => {
+bot.on('messageCreate', (message) => {
     // Return if author is bot or message doesnt start w/ prefix
     if (message.author.bot) return;
     if (!message.content.startsWith(prefix)) return;
