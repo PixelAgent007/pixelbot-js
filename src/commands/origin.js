@@ -5,19 +5,6 @@ const fs = require('fs');
 
 let registeredOrigins = [];
 
-const files = fs
-    .readdirSync('./src/origins/')
-    .filter((file) => file.endsWith('.js'))
-    .forEach((file) => {
-        /**
-         * @type {Origin}
-         */
-        const origin = require(`../origins/${file}`);
-
-        console.log(`Origin ${origin.name} loaded successfully!`);
-        registeredOrigins.push(origin);
-    });
-
 module.exports = new Command({
     name: 'origin',
     description: "Displays someone's origins",
@@ -25,6 +12,19 @@ module.exports = new Command({
     run: async function (message, args, bot) {
         if (message.guild.id != 906804682452779058) return;
         if (args.length != 2) return;
+
+        const files = fs
+            .readdirSync('./src/origins/')
+            .filter((file) => file.endsWith('.js'))
+            .forEach((file) => {
+                /**
+                 * @type {Origin}
+                 */
+                const origin = require(`../origins/${file}`);
+
+                console.log(`Origin ${origin.name} loaded successfully!`);
+                registeredOrigins.push(origin);
+            });
 
         const player = args[1];
         if (player.length > 16 || player.length < 3) return;
