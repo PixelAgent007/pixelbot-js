@@ -39,7 +39,7 @@ app.get('/v1', isAuthorized, (req, res) => {
     res.json({code: 200, text: 'Authentication successful.'})
 });
 
-app.post('/v1/submit_application', isAuthorized, (req, res) => {
+app.post('/v1/submit_application', (req, res) => {
     console.log(req);
     res.json({code: 200, text: 'Post successful.'})
 });
