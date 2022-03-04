@@ -4,6 +4,8 @@ const Command = require('./lib/bot.js');
 const Listener = require('./lib/listener.js');
 const fs = require('fs');
 const dotenv = require('dotenv');
+const express = require('express')
+const sha256 = require('sha256')
 
 // Setting up dotenv
 dotenv.config();
@@ -17,6 +19,33 @@ console.clear();
 
 // Defining bot
 const bot = new Bot();
+
+// Defining API listening port
+const port = 3000;
+
+// Auth function
+function isAuthorized(req, res, next) {
+    if (sha256(req.headers.authorization) === process.env.FORMS_TOKEN) {
+        next();
+    } else {
+        res.status(401);
+        res.json({code: 401, text: 'Not permitted.'});
+    }
+}
+
+// Defining http server
+const app = express();
+app.get('/v1', isAuthorized, (req, res) => {
+    res.json({code: 200, text: 'Authentication successful.'})
+});
+
+app.post('/v1/submit_application', isAuthorized, (req, res) => {
+    console.log(req);
+    res.json({code: 200, text: 'Post successful.'})
+});
+
+// Starting express app
+app.listen(port, () => console.log(`App listening on port ${port}!`));
 
 // Building Event handler
 const eventFiles = fs
