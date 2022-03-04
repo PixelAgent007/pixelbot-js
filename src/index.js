@@ -25,7 +25,7 @@ const port = 3000;
 
 // Auth function
 function isAuthorized(req, res, next) {
-    if (sha256(req.headers.authorization) === process.env.FORMS_TOKEN) {
+    if (sha256(req.headers.authorization) === "Bearer " + process.env.FORMS_TOKEN) {
         next();
     } else {
         res.status(401);
