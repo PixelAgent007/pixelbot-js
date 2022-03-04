@@ -38,15 +38,19 @@ const eventFiles = fs
     });
 
 // Building command handler
-fs.readdirSync('./src/commands')
-    .filter((file) => file.endsWith('.js'))
-    .forEach((file) => {
-        /**
-         * @type {Command}
-         */
-        const command = require(`./commands/${file}`);
-        console.log(`Command ${command.name} loaded successfully!`);
-        bot.commands.set(command.name, command);
+fs.readdirSync('./src/commands/', { withFileTypes: true })
+    .filter((folder) => folder.isDirectory())
+    .forEach((folder) => {
+        fs.readdirSync('./src/commands/' + folder.name + '/')
+            .filter((file) => file.endsWith('.js'))
+            .forEach((file) => {
+                /**
+                 * @type {Command}
+                 */
+                const command = require(`./commands/${folder.name}/${file}`);
+                console.log(`Command ${command.name} loaded successfully!`);
+                bot.commands.set(command.name, command);
+            });
     });
 
 bot.on('messageCreate', (message) => {
@@ -57,7 +61,7 @@ bot.on('messageCreate', (message) => {
     // Getting args + command obj
     const args = message.content.substring(prefix.length).split(/ +/);
     const command = bot.commands.find(
-        (command) => command.name == args[0].toLowerCase()
+        (command) => command.name === args[0].toLowerCase()
     );
 
     if (!command) {

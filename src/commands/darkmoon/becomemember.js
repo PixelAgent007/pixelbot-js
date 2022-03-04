@@ -1,5 +1,5 @@
 // Imports
-const Command = require('../lib/command.js');
+const Command = require('../../lib/command.js');
 const discord = require('discord.js');
 
 module.exports = new Command({

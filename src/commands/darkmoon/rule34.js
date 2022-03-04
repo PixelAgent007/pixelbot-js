@@ -1,7 +1,7 @@
 // Imports
-const Command = require('../lib/command.js');
+const Command = require('../../lib/command.js');
 
-const no = '2';
+const no = '34';
 const short = 'This is a community server.';
 const long = `
 It is not allowed to post explicit, pornographic or NSFW content in general. No illegal content or piracy. It is also not allowed sending links leading to such. 
@@ -13,7 +13,7 @@ module.exports = new Command({
 
     async run(message, args, bot) {
         await message.reply(`
-        **Rule ${no}: ${short}** ${long}
+        **Rule 2: ${short}** ${long}
         `);
     },
 });

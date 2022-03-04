@@ -1,10 +1,10 @@
 // Imports
-const Command = require('../lib/command.js');
+const Command = require('../../lib/command.js');
 
-const no = '4';
-const short = "Don't advertise.";
+const no = '196';
+const short = 'Keep the balance of the time-space continuum.';
 const long = `
-Without permission of a mod spam or self-promotion (Server invites, ads, etc.) isn't allowed. Neither is DM-Advertising!
+Failure to comply with the laws of the time-space continuum is punishable by death (and a ban on cookies).
 `;
 
 module.exports = new Command({

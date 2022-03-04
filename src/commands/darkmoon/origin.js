@@ -1,6 +1,6 @@
 // Imports
-const Command = require('../lib/command.js');
-const Origin = require('../lib/origin.js');
+const Command = require('../../lib/command.js');
+const Origin = require('../../lib/origin.js');
 const fs = require('fs');
 
 let registeredOrigins = [];
@@ -20,7 +20,7 @@ module.exports = new Command({
                 /**
                  * @type {Origin}
                  */
-                const origin = require(`../origins/${file}`);
+                const origin = require(`../../origins/${file}`);
 
                 console.log(`Origin ${origin.name} loaded successfully!`);
                 registeredOrigins.push(origin);
