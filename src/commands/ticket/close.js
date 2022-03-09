@@ -1,6 +1,6 @@
 // Imports
 const Command = require('../../lib/command.js');
-const { MessageEmbed, Permissions} = require('discord.js');
+const { MessageEmbed, Permissions } = require('discord.js');
 const hastebin = require('hastebin');
 const dotenv = require('dotenv');
 
