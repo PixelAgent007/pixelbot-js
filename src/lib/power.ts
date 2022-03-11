@@ -1,4 +1,7 @@
-class Power {
+export class Power {
+    public name: string;
+    public description: string;
+
     /**
      * @typedef {{name: string, description: string}} Data
      * @param {Data} data
@@ -8,5 +11,3 @@ class Power {
         this.description = data.description;
     }
 }
-
-module.exports = Power;

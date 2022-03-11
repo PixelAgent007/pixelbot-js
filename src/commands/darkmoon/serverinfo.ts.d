@@ -1,13 +1,13 @@
 // Imports
-const Command = require('../../lib/command.js');
-const discord = require('discord.js');
+import {Command} from '../../lib/command';
+import {MessageEmbed} from 'discord.js';
 
 module.exports = new Command({
     name: 'serverinfo',
     description: 'Provides information about the server.',
 
     async run(message, args, bot) {
-        const embed = new discord.MessageEmbed()
+        const embed = new MessageEmbed()
             .setColor('PURPLE')
             .setTitle('Server Information')
             .setDescription('IP: `darkmoonsmp.tk`')

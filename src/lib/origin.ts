@@ -1,10 +1,21 @@
 // Imports
-const Power = require('./power.js');
-const { MessageEmbed } = require('discord.js');
+import { MessageEmbed } from 'discord.js';
+import { Power } from './power';
 
-class Origin {
+export class Origin {
+    public name: string;
+    public player: string;
+    public impact: string;
+    public description: string;
+    public author: string;
+    public src: string;
+    public actives: Power[];
+    public pros: Power[];
+    public passives: Power[];
+    public cons: Power[];
+
     /**
-     * @typedef {{name: string, player: string, impact: int, description: string, author: string, src: string, actives: Power[], pros: Power[], passives: Power[], cons: Power[]}} Data
+     * @typedef {{name: string, player: string, impact: string, description: string, author: string, src: string, actives: Power[], pros: Power[], passives: Power[], cons: Power[]}} Data
      * @param {Data} data
      */
     constructor(data) {
@@ -21,7 +32,7 @@ class Origin {
         this.cons = data.cons;
     }
 
-    static getEmbed(origin) {
+    public static getEmbed(origin: Origin) {
         let embed = new MessageEmbed()
             .setTitle(origin.name)
             .setColor('RANDOM')
@@ -62,12 +73,11 @@ class Origin {
         return embed;
     }
 
-    static visualizeImpact(impact) {
-        if (impact === 1) return ':green_circle:';
-        if (impact === 2) return ':yellow_circle: :yellow_circle:';
-        if (impact === 3)
-            return ':orange_circle: :orange_circle: :orange_circle:';
+    private static visualizeImpact(impact: string) {
+        switch (impact) {
+            case '2': return ':yellow_circle: :yellow_circle:';
+            case '3': return ':orange_circle: :orange_circle: :orange_circle:';
+            default: return ':green_circle:';
+        }
     }
 }
-
-module.exports = Origin;

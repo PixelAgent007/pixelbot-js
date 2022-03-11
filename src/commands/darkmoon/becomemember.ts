@@ -1,13 +1,16 @@
 // Imports
-const Command = require('../../lib/command.js');
-const discord = require('discord.js');
+import {Command} from '../../lib/command.js';
+import {MessageEmbed} from 'discord.js';
 
-module.exports = new Command({
+const command: Command = {
     name: 'becomemember',
     description: 'Provides information about becoming a member.',
 
-    async run(message, args, bot) {
-        const embed = new discord.MessageEmbed()
+    async run(message, bot, args) {
+        // @ts-ignore
+        const channel = message.guild.channels.cache.get('916023846862221353').toString();
+
+        const embed = new MessageEmbed()
             .setColor('PURPLE')
             .setTitle('How do I join the server?')
             .setDescription(
@@ -16,7 +19,7 @@ module.exports = new Command({
             .addFields(
                 {
                     name: 'Step 1: ',
-                    value: 'Please fill out this form: https://forms.gle/gmZSEJ8L1Dfy9o4k9',
+                    value: 'Please fill build this form: https://forms.gle/gmZSEJ8L1Dfy9o4k9',
                 },
                 {
                     name: 'Step 2: ',
@@ -25,12 +28,11 @@ module.exports = new Command({
                 {
                     name: 'Step 3: ',
                     value:
-                        'Download the modpack as stated in ' +
-                        message.guild.channels.cache
-                            .get('916023846862221353')
-                            .toString(),
+                        'Download the modpack as stated in ' + channel,
                 }
             );
         message.channel.send({ embeds: [embed] });
     },
-});
+}
+
+export default command;

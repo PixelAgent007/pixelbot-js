@@ -1,5 +1,5 @@
 // Imports
-const Command = require('../../lib/command.js');
+import {Command} from '../../lib/command.js';
 
 const no = '196';
 const short = 'Keep the balance of the time-space continuum.';
@@ -7,13 +7,15 @@ const long = `
 Failure to comply with the laws of the time-space continuum is punishable by death (and a ban on cookies).
 `;
 
-module.exports = new Command({
+const command: Command = {
     name: 'rule' + no,
-    description: 'Print out Rule ' + no + '.',
+    description: 'Print Rule ' + no + '.',
 
-    async run(message, args, bot) {
+    async run(message, bot, args) {
         await message.reply(`
         **Rule ${no}: ${short}** ${long}
         `);
     },
-});
+}
+
+export default command;

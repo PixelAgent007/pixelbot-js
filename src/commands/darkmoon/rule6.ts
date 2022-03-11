@@ -1,5 +1,5 @@
 // Imports
-const Command = require('../../lib/command.js');
+import {Command} from '../../lib/command.js';
 
 const no = '6';
 const short = "In-game guidelines";
@@ -13,13 +13,15 @@ const long = `
        Therefore, loot chests may not be obstructed or broken.
 `
 
-module.exports = new Command({
+const command: Command = {
     name: 'rule' + no,
-    description: 'Print out Rule ' + no + '.',
+    description: 'Print Rule ' + no + '.',
 
-    async run(message, args, bot) {
+    async run(message, bot, args) {
         await message.reply(`
         **Rule ${no}: ${short}** ${long}
         `);
     },
-});
+}
+
+export default command;

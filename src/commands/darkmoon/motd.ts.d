@@ -1,24 +1,24 @@
 // Imports
-const Command = require('../../lib/command.js');
-const mcping = require('mcping-js');
-const discord = require('discord.js');
+import {Command} from '../../lib/command';
+import {MessageEmbed} from 'discord.js';
+import {MinecraftServer} from 'mcping-js';
 
-module.exports = new Command({
+export default new Command({
     name: 'motd',
     description: 'Gets a random motd.',
 
     async run(message, args, bot) {
-        const server = new mcping.MinecraftServer('darkmoonsmp.tk', 25565);
+        const server = new MinecraftServer('darkmoonsmp.tk', 25565);
         server.ping(1000, 757, (err, res) => {
-            if (err) {
-                const embed = new discord.MessageEmbed()
+            if (err || !res) {
+                const embed = new MessageEmbed()
                     .setTitle("Server couldn't be reached!")
                     .setColor('RED');
                 message.channel.send({ embeds: [embed] });
                 console.log(err);
             } else {
-                const embed = new discord.MessageEmbed()
-                    .setTitle(res.description.extra[2].text)
+                const embed = new MessageEmbed()
+                    .setTitle(res.description.text)
                     .setColor('PURPLE');
                 message.channel.send({ embeds: [embed] });
             }

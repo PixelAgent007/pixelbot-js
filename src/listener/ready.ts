@@ -1,5 +1,5 @@
 // Imports
-const Listener = require('../lib/listener.js');
+import { Listener } from '../lib/listener';
 
 module.exports = new Listener({
     name: 'Bot Startup',

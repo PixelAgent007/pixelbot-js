@@ -1,12 +1,12 @@
 // Imports
-const Command = require('../../lib/command.js');
-const { MessageEmbed, Permissions } = require('discord.js');
-const dotenv = require('dotenv');
+import { Command } from '../../lib/command.js';
+import {MessageEmbed, Permissions} from 'discord.js';
+import dotenv from 'dotenv';
 
 // Setting up dotenv
 dotenv.config();
 
-module.exports = new Command({
+export default new Command({
     name: 'new',
     description: 'Creates a new ticket.',
 
@@ -46,7 +46,7 @@ module.exports = new Command({
                     .addFields(
                         {
                             name: 'Step 1: ',
-                            value: 'If not done already, please fill out this form: https://forms.gle/gmZSEJ8L1Dfy9o4k9',
+                            value: 'If not done already, please fill build this form: https://forms.gle/gmZSEJ8L1Dfy9o4k9',
                         },
                         {
                             name: 'Step 2:',
@@ -63,7 +63,7 @@ module.exports = new Command({
                     );
                 channel.send({ embeds: [embed] });
                 const logchannel = message.guild.channels.cache.find(
-                    (channel) => channel.name === 'ticket-logs'
+                    (channel) => channel.id === 906805009881104395
                 );
                 if (logchannel) {
                     logchannel.send(

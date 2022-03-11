@@ -1,18 +1,16 @@
 // Imports
-const Command = require('../../lib/command.js');
-const { MessageEmbed, Permissions} = require('discord.js');
+import { Command } from '../../lib/command.js';
+import {Permissions} from 'discord.js';
 
-module.exports = new Command({
+export default new Command({
     name: 'open',
     description: 'Reopens a ticket.',
 
     async run(message, args, bot) {
         let member = message.guild.members.cache.get(message.author.id);
-        if (!member.roles.cache.has(process.env.TICKET_SUPPORTTEAM_ROLEID)) {
-            return message.reply("Only staff may reopen tickets!");
-        }
+        if (!member.roles.cache.has(process.env.TICKET_SUPPORTTEAM_ROLEID)) return message.reply("Only staff may reopen tickets!");
 
-        if (message.channel.name.includes('ticket-')) {
+        if (message.channel.name.includes('closed-')) {
             try {
                 member = message.guild.members.cache.get(message.channel.topic);
                 await message.channel.permissionOverwrites.set([
@@ -20,6 +18,7 @@ module.exports = new Command({
                     {type: 'role', id: process.env.TICKET_SUPPORTTEAM_ROLEID, allow: [Permissions.FLAGS.VIEW_CHANNEL]},
                     {type: 'role', id: message.guild.roles.everyone.id, deny: [Permissions.FLAGS.VIEW_CHANNEL]},
                 ]);
+                message.channel.setName('ticket-' + message.channel.name.substring(7));
                 message.channel.send(`Successfully re-opened ${message.channel}.`);
             } catch (e) {
                 console.log(e);

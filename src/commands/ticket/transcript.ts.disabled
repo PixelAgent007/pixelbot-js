@@ -1,8 +1,9 @@
 // Imports
-const Command = require('../../lib/command.js');
-const { MessageEmbed, Permissions} = require('discord.js');
+import { Command } from '../../lib/command';
+import {MessageEmbed} from 'discord.js';
+import dotenv from 'dotenv';
+
 const hastebin = require('hastebin');
-const dotenv = require('dotenv');
 
 // Setting up dotenv
 dotenv.config();
@@ -13,9 +14,7 @@ module.exports = new Command({
 
     async run(message, args, bot) {
         const member = message.guild.members.cache.get(message.author.id);
-        if (!member.roles.cache.has(process.env.TICKET_SUPPORTTEAM_ROLEID)) {
-            return message.reply("Only staff may transcribe tickets!");
-        }
+        if (!member.roles.cache.has(process.env.TICKET_SUPPORTTEAM_ROLEID)) return message.reply("Only staff may transcribe tickets!");
 
         if (message.channel.name.includes('ticket-')) {
             message.channel.messages.fetch().then(async (messages) => {

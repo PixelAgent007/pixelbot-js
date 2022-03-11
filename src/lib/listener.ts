@@ -1,17 +1,21 @@
 // Imports
-const Discord = require('discord.js');
-const Bot = require('./bot.js');
+import { Bot } from './bot.js';
 
 /**
  *
  * @param {string[]} args
  * @param {Bot} bot
  */
-function RunFunction(bot, ...args) {}
+function run(bot, ...args) {}
 
-class Listener {
+export class Listener {
+    public name: any;
+    public type: any;
+    public once: any;
+    public run: any;
+
     /**
-     * @typedef {{name: string, type: string, once: boolean, run: RunFunction}} ListenerOptions
+     * @typedef {{name: string, type: string, once: boolean, run: run}} ListenerOptions
      * @param {ListenerOptions} options
      */
     constructor(options) {

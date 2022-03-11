@@ -1,30 +1,31 @@
 // Imports
-const Command = require('../../lib/command.js');
-const mcping = require('mcping-js');
-const discord = require('discord.js');
+import {Command} from '../../lib/command';
+import {MessageEmbed, MessageAttachment} from 'discord.js';
+import {MinecraftServer} from 'mcping-js';
 
 module.exports = new Command({
     name: 'status',
     description: "Checks minecraft server's status.",
 
     async run(message, args, bot) {
-        const server = new mcping.MinecraftServer('darkmoonsmp.tk', 25565);
+        const server = new MinecraftServer('darkmoonsmp.tk', 25565);
         server.ping(1000, 757, (err, res) => {
             if (err) {
-                const embed = new discord.MessageEmbed()
+                const embed = new MessageEmbed()
                     .setTitle("Server couldn't be reached!")
                     .setColor('RED');
                 message.channel.send({ embeds: [embed] });
             } else {
+                // @ts-ignore
                 const buff = new Buffer.from(
                     res.favicon.split(',')[1],
                     'base64'
                 );
-                const attachment = new discord.MessageAttachment(
+                const attachment = new MessageAttachment(
                     buff,
                     'output.png'
                 );
-                const embed = new discord.MessageEmbed()
+                const embed = new MessageEmbed()
                     .setTitle('Server Status')
                     .setColor('PURPLE')
                     .setDescription(

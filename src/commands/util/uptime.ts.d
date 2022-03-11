@@ -1,18 +1,18 @@
 // Imports
-const Command = require('../../lib/command.js');
-const { MessageEmbed } = require('discord.js');
+import { Command } from '../../lib/command.js';
+import { MessageEmbed } from 'discord.js';
 
-function parseDur(ms) {
-    let seconds = ms / 1000;
+function parseDur(ms: number) {
+    let seconds: number = ms / 1000;
 
-    const days = parseInt(seconds / 86400);
+    const days = seconds / 86400;
     seconds = seconds % 86400;
 
-    const hours = parseInt(seconds / 3600);
+    const hours = seconds / 3600
     seconds = seconds % 3600;
 
-    const minutes = parseInt(seconds / 60);
-    seconds = parseInt(seconds % 60);
+    const minutes = seconds / 60;
+    seconds = seconds % 60;
 
     if (days) {
         return `\`${days}\` day, \`${hours}\` hours, \`${minutes}\` minutes`;
@@ -24,7 +24,7 @@ function parseDur(ms) {
     return `\`${seconds}\` second(s)`;
 }
 
-module.exports = new Command({
+export default new Command({
     name: 'uptime',
     description: "Checks the bot's uptime.",
 

@@ -1,16 +1,13 @@
 // Imports
-const Command = require('../../lib/command.js');
-const { MessageEmbed } = require('discord.js');
+import { Command } from '../../lib/command.js';
+import { MessageEmbed } from 'discord.js';
 
-module.exports = new Command({
+export default new Command({
     name: 'ping',
     description: "Checks the bot's connection to the discord servers.",
 
     async run(message, args, bot) {
-        if (message.author.id == 289896419291168775) {
-            await message.delete();
-            return;
-        } else {
+        if (message.author.id == 487247155741065229) {
             message.channel.send('🏓 Pinging....').then((msg) => {
                 const embed = new MessageEmbed()
                     .setTitle('🏓 Pong!')
@@ -23,6 +20,8 @@ module.exports = new Command({
                 msg.channel.send({ embeds: [embed] });
                 msg.delete();
             });
+        } else {
+            message.delete();
         }
     },
 });

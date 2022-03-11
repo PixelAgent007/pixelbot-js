@@ -1,8 +1,7 @@
 // Imports
-const Command = require('../../lib/command.js');
-const { MessageEmbed, Permissions } = require('discord.js');
-const hastebin = require('hastebin');
-const dotenv = require('dotenv');
+import { Command } from '../../lib/command';
+import {MessageEmbed, Permissions} from 'discord.js';
+import dotenv from 'dotenv';
 
 // Setting up dotenv
 dotenv.config();
@@ -20,6 +19,7 @@ module.exports = new Command({
                     {type: 'role', id: process.env.TICKET_SUPPORTTEAM_ROLEID, allow: [Permissions.FLAGS.VIEW_CHANNEL]},
                     {type: 'role', id: message.guild.roles.everyone.id, deny: [Permissions.FLAGS.VIEW_CHANNEL]},
                 ]);
+                message.channel.setName('closed-' + message.channel.name.substring(7));
                 message.channel.send(`Successfully closed ${message.channel}.`);
             } catch (e) {
                 console.log(e);
@@ -28,7 +28,7 @@ module.exports = new Command({
 
             message.channel.messages.fetch().then(async (messages) => {
                 const output = messages.map(m => `${new Date(m.createdAt).toLocaleString('en-US')} - ${m.author.tag}: ${m.attachments.size > 0 ? m.attachments.first().proxyURL : m.content}`).join('\n');
-                hastebin.createPaste(output, {
+                createPaste(output, {
                     raw: false,
                     contentType: 'text/plain',
                     server: 'https://haste.oskar.global'
@@ -41,7 +41,7 @@ module.exports = new Command({
                     })
                     .catch(function (requestError) {
                         console.log(requestError);
-                        hastebin.createPaste(output, {
+                        createPaste(output, {
                             raw: false,
                             contentType: 'text/plain',
                             server: 'https://hastebin.com'
@@ -59,7 +59,7 @@ module.exports = new Command({
             });
         } else {
             return message.reply(
-                'You can\'t use this command here. Please use this command in a closed ticket.',
+                'You can\'t use this command here. Please use this command in an open ticket.',
             );
         }
     },

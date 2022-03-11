@@ -1,7 +1,7 @@
 // Imports
-const Command = require('../../lib/command.js');
-const Origin = require('../../lib/origin.js');
-const fs = require('fs');
+import {Command} from '../../lib/command';
+import {Origin} from '../../lib/origin';
+import fs from 'fs';
 
 let registeredOrigins = [];
 
@@ -13,16 +13,16 @@ module.exports = new Command({
         if (message.guild.id != 906804682452779058) return;
         if (args.length != 2) return;
 
-        const files = fs
-            .readdirSync('./src/origins/')
+        fs.readdirSync('./src/origins/')
             .filter((file) => file.endsWith('.js'))
             .forEach((file) => {
                 /**
                  * @type {Origin}
                  */
-                const origin = require(`../../origins/${file}`);
+                const origin: Origin = require(`../../origins/${file}`);
 
                 console.log(`Origin ${origin.name} loaded successfully!`);
+                // @ts-ignore
                 registeredOrigins.push(origin);
             });
 
@@ -30,6 +30,7 @@ module.exports = new Command({
         if (player.length > 16 || player.length < 3) return;
 
         registeredOrigins.forEach((origin) => {
+            // @ts-ignore
             if (origin.player == player)
                 message.channel.send({ embeds: [Origin.getEmbed(origin)] });
             return;

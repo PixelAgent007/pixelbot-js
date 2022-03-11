@@ -1,6 +1,6 @@
 // Imports
-const Command = require('../../lib/command.js');
-const { MessageEmbed } = require('discord.js');
+import { Command } from '../lib/command.js';
+import { MessageEmbed } from 'discord.js';
 
 module.exports = new Command({
     name: '',

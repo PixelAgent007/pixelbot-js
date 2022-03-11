@@ -1,9 +1,9 @@
 // Imports
-const Command = require('../../lib/command.js');
-const discord = require('discord.js');
-const { exec } = require('child_process');
+import { Command } from '../../lib/command.js';
+import { MessageEmbed } from 'discord.js';
+import { exec } from 'child_process';
 
-module.exports = new Command({
+export default new Command({
     name: 'git',
     description:
         'Fetches all new origins from the PixelAgent007/pixelbot-js-origins repository.',
@@ -20,7 +20,7 @@ module.exports = new Command({
                         if (stderr) {
                             console.log(`stderr: ${stderr}`);
                         }
-                        const embed = new discord.MessageEmbed()
+                        const embed = new MessageEmbed()
                             .setTitle('Origin Git Status')
                             .setColor('PURPLE')
                             .setDescription(stdout);
@@ -36,7 +36,7 @@ module.exports = new Command({
                     if (stderr) {
                         console.log(`stderr: ${stderr}`);
                     }
-                    const embed = new discord.MessageEmbed()
+                    const embed = new MessageEmbed()
                         .setTitle('Bot Git Status')
                         .setColor('PURPLE')
                         .setDescription(stdout);
@@ -51,7 +51,7 @@ module.exports = new Command({
                     if (stderr) {
                         console.log(`stderr: ${stderr}`);
                     }
-                    const embed = new discord.MessageEmbed()
+                    const embed = new MessageEmbed()
                         .setTitle('Origin Git Status')
                         .setColor('PURPLE')
                         .setDescription(stdout);
@@ -59,7 +59,7 @@ module.exports = new Command({
                 });
                 break;
             default:
-                const embed = new discord.MessageEmbed()
+                const embed = new MessageEmbed()
                     .setTitle('Git Help')
                     .setColor('PURPLE').setDescription(`
                     Available commands:
