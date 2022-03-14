@@ -15,7 +15,7 @@ module.exports = new Listener({
     once: true,
     run() {
         // Defining API listening port
-        const port = 8080;
+        const port = 3000;
 
         // Auth function
         function isAuthorized(req, res, next) {
