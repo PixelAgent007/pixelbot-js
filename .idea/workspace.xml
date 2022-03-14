@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="96a2855d-b7d6-4cb0-bc3d-395bd4818ba0" name="Changes" comment="Set everything up for production">
-      <change beforePath="$PROJECT_DIR$/../pixelbot-js-form/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../pixelbot-js-form/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pixelbot-js-form/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../pixelbot-js-form/package.json" afterDir="false" />
+    <list default="true" id="96a2855d-b7d6-4cb0-bc3d-395bd4818ba0" name="Changes" comment="Fixed dotenv">
       <change beforePath="$PROJECT_DIR$/../pixelbot-js-form/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../pixelbot-js-form/src/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -76,7 +74,7 @@
       <workItem from="1647095207634" duration="1784000" />
       <workItem from="1647097007028" duration="7182000" />
       <workItem from="1647270006376" duration="220000" />
-      <workItem from="1647271780562" duration="3026000" />
+      <workItem from="1647271780562" duration="3122000" />
     </task>
     <task id="LOCAL-00001" summary="Ran prettier &amp; made tickets better">
       <created>1647273301855</created>
@@ -106,7 +104,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647274529826</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Secured the api key">
+      <created>1647274823815</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1647274823815</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -132,6 +137,8 @@
     <MESSAGE value="Changed port" />
     <MESSAGE value="Fixed prefix" />
     <MESSAGE value="Set everything up for production" />
-    <option name="LAST_COMMIT_MESSAGE" value="Set everything up for production" />
+    <MESSAGE value="Secured the api key" />
+    <MESSAGE value="Fixed dotenv" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed dotenv" />
   </component>
 </project>
