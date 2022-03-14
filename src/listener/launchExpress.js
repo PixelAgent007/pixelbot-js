@@ -5,6 +5,7 @@ const sha256 = require("sha256");
 const bodyParser = require("body-parser");
 const dotenv = require("dotenv");
 const sqlite3 = require("sqlite3").verbose();
+const cors = require('cors');
 
 // Setting up dotenv
 dotenv.config();
@@ -33,15 +34,16 @@ module.exports = new Listener({
             res.json({ code: 200, text: "Authentication successful." });
         });
 
-        app.use(function (req, res, next) {
-            res.header("Access-Control-Allow-Origin", "apply.oskar.global");
-            res.header(
-                "Access-Control-Allow-Headers",
-                "Origin, X-Requested-With, Content-Type, Accept"
-            );
-            next();
-        });
+        // Setting up CORS
+        const corsOptions = {
+            origin: 'https://apply.oskar.global',
+            optionsSuccessStatus: 200
+        }
 
+        app.use(cors(corsOptions));
+
+
+        // Setting up body parser
         app.use(bodyParser.urlencoded({ extended: false }));
         app.use(bodyParser.json());
 
