@@ -5,7 +5,6 @@ const sha256 = require("sha256");
 const bodyParser = require("body-parser");
 const dotenv = require("dotenv");
 const sqlite3 = require("sqlite3").verbose();
-const cors = require('cors');
 
 // Setting up dotenv
 dotenv.config();
