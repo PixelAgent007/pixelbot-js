@@ -17,28 +17,14 @@ module.exports = new Listener({
         // Defining API listening port
         const port = 3000;
 
-        // Auth function
-        function isAuthorized(req, res, next) {
-            if (sha256(req.headers.authorization) === process.env.FORMS_TOKEN) {
-                next();
-            } else {
-                res.status(401);
-                res.json({ code: 401, text: "Not permitted." });
-            }
-        }
-
         // Defining http server
         const app = express();
-        app.get("/v1", isAuthorized, (req, res) => {
-            res.json({ code: 200, text: "Authentication successful." });
-        });
-
 
         // Setting up body parser
         app.use(bodyParser.urlencoded({ extended: false }));
         app.use(bodyParser.json());
 
-        app.post("/v1/submit_application", isAuthorized, (req, response) => {
+        app.post("/v1/submit_application", (req, response) => {
             response.json({ code: 200, text: "Post successful." });
             const res = req.body;
             const db = new sqlite3.Database("database.db", (err) => {
