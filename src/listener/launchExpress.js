@@ -34,14 +34,6 @@ module.exports = new Listener({
             res.json({ code: 200, text: "Authentication successful." });
         });
 
-        // Setting up CORS
-        const corsOptions = {
-            origin: 'https://apply.oskar.global',
-            optionsSuccessStatus: 200
-        }
-
-        app.use(cors(corsOptions));
-
 
         // Setting up body parser
         app.use(bodyParser.urlencoded({ extended: false }));
