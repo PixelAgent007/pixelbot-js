@@ -16,7 +16,7 @@ module.exports = new Command({
             .addFields(
                 {
                     name: "Step 1: ",
-                    value: "Please open a ticket by typing `a!new` in any channel. Staff will be with you shortly.",
+                    value: "Please open a ticket by typing `!new` in any channel. Staff will be with you shortly.",
                 },
                 {
                     name: "Step 2: ",
