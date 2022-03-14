@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="96a2855d-b7d6-4cb0-bc3d-395bd4818ba0" name="Changes" comment="Updated dependencies">
+    <list default="true" id="96a2855d-b7d6-4cb0-bc3d-395bd4818ba0" name="Changes" comment="Changed fetch mode">
       <change beforePath="$PROJECT_DIR$/../pixelbot-js-form/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../pixelbot-js-form/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +75,7 @@
       <workItem from="1647097007028" duration="7182000" />
       <workItem from="1647270006376" duration="220000" />
       <workItem from="1647271780562" duration="3643000" />
-      <workItem from="1647280805368" duration="768000" />
+      <workItem from="1647280805368" duration="1682000" />
     </task>
     <task id="LOCAL-00001" summary="Ran prettier &amp; made tickets better">
       <created>1647273301855</created>
@@ -147,7 +147,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647281482797</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Changed fetch mode">
+      <created>1647281581511</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1647281581511</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -179,6 +186,7 @@
     <MESSAGE value="Fixed CORS entry" />
     <MESSAGE value="Disabling CORS" />
     <MESSAGE value="Updated dependencies" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated dependencies" />
+    <MESSAGE value="Changed fetch mode" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed fetch mode" />
   </component>
 </project>
