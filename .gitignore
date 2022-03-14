@@ -131,3 +131,6 @@ dist
 
 # Custom configuration
 **/.DS_Store
+
+# Sqlite3 db
+*.db

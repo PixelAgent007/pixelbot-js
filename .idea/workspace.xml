@@ -2,15 +2,83 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96a2855d-b7d6-4cb0-bc3d-395bd4818ba0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scheme.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/commands/darkmoon/rule420.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/commands/darkmoon/rule7.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/commands/forms/get-response.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/util/transcribe.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pixelbot-js-form/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../pixelbot-js-form/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/pixelbot-js.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pixelbot-js.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/darkmoon/becomemember.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/darkmoon/becomemember.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/darkmoon/motd.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/darkmoon/motd.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/darkmoon/origin.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/darkmoon/origin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/darkmoon/rule1.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/darkmoon/rule1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/darkmoon/rule196.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/darkmoon/rule196.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/darkmoon/rule2.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/darkmoon/rule2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/darkmoon/rule3.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/darkmoon/rule3.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/darkmoon/rule34.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/darkmoon/rule34.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/darkmoon/rule4.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/darkmoon/rule4.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/darkmoon/rule5.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/darkmoon/rule5.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/darkmoon/rule6.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/darkmoon/rule6.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/darkmoon/serverinfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/darkmoon/serverinfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/darkmoon/status.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/darkmoon/status.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/fun/fuck_you_pixel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/fun/fuck_you_pixel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/fun/no.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/fun/no.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/template.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/template.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/ticket/close.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/ticket/close.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/ticket/delete.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/ticket/delete.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/ticket/new.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/ticket/new.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/ticket/open.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/ticket/open.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/ticket/transcript.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/ticket/transcript.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/util/git.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/util/git.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/util/ping.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/util/ping.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/util/uptime.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/util/uptime.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/bot.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/bot.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/command.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/command.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/listener.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/listener.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/origin.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/origin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/listener/launchExpress.js.disabled" beforeDir="false" afterPath="$PROJECT_DIR$/src/listener/launchExpress.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/listener/messageCreate.js.disabled" beforeDir="false" afterPath="$PROJECT_DIR$/src/listener/profanityFilter.js.disabled" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/listener/ready.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/listener/ready.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/origins" beforeDir="false" afterPath="$PROJECT_DIR$/src/origins" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/origins/AlphaAxis64501.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/origins/AlphaAxis64501.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/origins/GoldFish5.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/origins/GoldFish5.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/origins/Isengard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/origins/Isengard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/origins/Kawatt.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/origins/Kawatt.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/origins/KitCat962.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/origins/KitCat962.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/origins/Lofees0v.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/origins/Lofees0v.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/origins/Nyxoy4.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/origins/Nyxoy4.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/origins/PixelAgent007.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/origins/PixelAgent007.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/origins/Skulk.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/origins/Skulk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/origins/Zapto_Gaming.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/origins/Zapto_Gaming.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="26FCUdvqdn0g1Hwfd0mJLMrd9U5" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -21,12 +89,35 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="sqlite" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/" value="SQLite" />
+    <property name="javascript.nodejs.core.library.configured.version" value="16.13.1" />
+    <property name="javascript.nodejs.core.library.typings.version" value="16.11.26" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/commands/forms" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.DirectoryMappings" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/commands/forms" />
+      <recent name="$PROJECT_DIR$/src/commands/darkmoon" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="start" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="start" />
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -36,7 +127,11 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1647009964373</updated>
-      <workItem from="1647009965511" duration="18000" />
+      <workItem from="1647009965511" duration="1469000" />
+      <workItem from="1647095207634" duration="1784000" />
+      <workItem from="1647097007028" duration="7182000" />
+      <workItem from="1647270006376" duration="220000" />
+      <workItem from="1647271780562" duration="1384000" />
     </task>
     <servers />
   </component>
@@ -55,6 +150,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <ignored-roots>
       <path value="$PROJECT_DIR$/src/pixelbot-js-origins" />
     </ignored-roots>

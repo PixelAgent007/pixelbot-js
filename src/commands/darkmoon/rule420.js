@@ -1,10 +1,10 @@
 // Imports
 const Command = require("../../lib/command.js");
 
-const no = "2";
-const short = "This is a community server.";
+const no = "420";
+const short = "Thou shall not <:markiplierE:919627262381420584>!";
 const long = `
-It is not allowed to post explicit, pornographic or NSFW content in general. No illegal content or piracy. It is also not allowed sending links leading to such. 
+Failure to comply with this rule is punishable by death (and a ban on cookies).
 `;
 
 module.exports = new Command({

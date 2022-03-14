@@ -1,12 +1,12 @@
 // Imports
-const Listener = require('../lib/listener.js');
+const Listener = require("../lib/listener.js");
 
 module.exports = new Listener({
-    name: 'Bot Startup',
-    type: 'ready',
+    name: "Bot Startup",
+    type: "ready",
     once: true,
     run() {
         // Clear console
-        console.log('Bot connected to Discord!');
+        console.log("Bot connected to Discord!");
     },
 });

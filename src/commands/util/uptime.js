@@ -1,6 +1,6 @@
 // Imports
-const Command = require('../../lib/command.js');
-const { MessageEmbed } = require('discord.js');
+const Command = require("../../lib/command.js");
+const { MessageEmbed } = require("discord.js");
 
 function parseDur(ms) {
     let seconds = ms / 1000;
@@ -25,15 +25,15 @@ function parseDur(ms) {
 }
 
 module.exports = new Command({
-    name: 'uptime',
+    name: "uptime",
     description: "Checks the bot's uptime.",
 
     async run(message, args, bot) {
         const duration = parseDur(bot.uptime);
-        message.channel.send('⌛ Loading...').then((msg) => {
+        message.channel.send("⌛ Loading...").then((msg) => {
             const embed = new MessageEmbed()
-                .setTitle(':inbox_tray: Online for')
-                .setColor('PURPLE')
+                .setTitle(":inbox_tray: Online for")
+                .setColor("PURPLE")
                 .setDescription(`**${duration}**`);
             msg.channel.send({ embeds: [embed] });
             msg.delete();

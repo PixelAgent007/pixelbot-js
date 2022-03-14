@@ -1,10 +1,10 @@
 // Imports
 const Command = require("../../lib/command.js");
 
-const no = "2";
-const short = "This is a community server.";
+const no = "7";
+const short = "Don't spam commands!";
 const long = `
-It is not allowed to post explicit, pornographic or NSFW content in general. No illegal content or piracy. It is also not allowed sending links leading to such. 
+Please refrain from spamming bot commands! Yes, I'm looking at you, Kit. <:shoebill:949393466377515038>
 `;
 
 module.exports = new Command({

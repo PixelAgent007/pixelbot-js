@@ -1,0 +1,2 @@
+CREATE TABLE IF NOT EXISTS tickets (ticketID BIGINT PRIMARY KEY, ownerID BIGINT, isOpen boolean DEFAULT true, transcriptURL varchar);
+CREATE TABLE IF NOT EXISTS form_responses (ticketID BIGINT PRIMARY KEY, timezone varchar, ign varchar, age varchar, hobbies text, origin varchar, origin_desc text, done boolean default false, download varchar, active boolean default false, rules boolean default false, anythingElse text);

@@ -1,21 +1,20 @@
 // Imports
-const Command = require('../../lib/command.js');
-const Origin = require('../../lib/origin.js');
-const fs = require('fs');
+const Command = require("../../lib/command.js");
+const Origin = require("../../lib/origin.js");
+const fs = require("fs");
 
 let registeredOrigins = [];
 
 module.exports = new Command({
-    name: 'origin',
+    name: "origin",
     description: "Displays someone's origins",
 
     run: async function (message, args, bot) {
         if (message.guild.id != 906804682452779058) return;
         if (args.length != 2) return;
 
-        const files = fs
-            .readdirSync('./src/origins/')
-            .filter((file) => file.endsWith('.js'))
+        fs.readdirSync("./src/origins/")
+            .filter((file) => file.endsWith(".js"))
             .forEach((file) => {
                 /**
                  * @type {Origin}
@@ -32,7 +31,6 @@ module.exports = new Command({
         registeredOrigins.forEach((origin) => {
             if (origin.player == player)
                 message.channel.send({ embeds: [Origin.getEmbed(origin)] });
-            return;
         });
     },
 });
