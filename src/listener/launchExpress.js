@@ -45,7 +45,7 @@ module.exports = new Listener({
         app.use(bodyParser.urlencoded({ extended: false }));
         app.use(bodyParser.json());
 
-        app.post("/v1/submit_application", (req, response) => {
+        app.post("/v1/submit_application", isAuthorized, (req, response) => {
             response.json({ code: 200, text: "Post successful." });
             const res = req.body;
             const db = new sqlite3.Database("database.db", (err) => {
