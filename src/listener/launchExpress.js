@@ -5,6 +5,7 @@ const sha256 = require("sha256");
 const bodyParser = require("body-parser");
 const dotenv = require("dotenv");
 const sqlite3 = require("sqlite3").verbose();
+const cors = require('cors');
 
 // Setting up dotenv
 dotenv.config();
@@ -24,6 +25,9 @@ module.exports = new Listener({
         app.use(bodyParser.urlencoded({ extended: false }));
         app.use(bodyParser.json());
 
+        // Setting up cors
+        app.use(cors());
+
         app.post("/v1/submit_application", (req, response) => {
             response.json({ code: 200, text: "Post successful." });
             const res = req.body;
@@ -32,6 +36,10 @@ module.exports = new Listener({
                     return console.error(err.message);
                 }
                 console.log("Connected to the SQlite database.");
+            });
+
+            db.get("select * from form_responses where ticketID = ?", res.ticketID, (err, row) => {
+               if (err || row) return console.log('Ticket already exists!');
             });
 
             db.serialize(() => {
