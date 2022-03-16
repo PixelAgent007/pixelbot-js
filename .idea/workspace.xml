@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="96a2855d-b7d6-4cb0-bc3d-395bd4818ba0" name="Changes" comment="re-added cors">
-      <change afterPath="$PROJECT_DIR$/../pixelbot-js-form/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pixelbot-js-form/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../pixelbot-js-form/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pixelbot-js-form/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../pixelbot-js-form/package.json" afterDir="false" />
+    <list default="true" id="96a2855d-b7d6-4cb0-bc3d-395bd4818ba0" name="Changes" comment="Added local server">
+      <change beforePath="$PROJECT_DIR$/../pixelbot-js-form/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/../pixelbot-js-form/server.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../pixelbot-js-form/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../pixelbot-js-form/src/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/listener/launchExpress.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/listener/launchExpress.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +79,8 @@
       <workItem from="1647280805368" duration="2719000" />
       <workItem from="1647357813037" duration="1427000" />
       <workItem from="1647365285830" duration="2395000" />
-      <workItem from="1647439323772" duration="330000" />
+      <workItem from="1647439323772" duration="1865000" />
+      <workItem from="1647453143432" duration="368000" />
     </task>
     <task id="LOCAL-00001" summary="Ran prettier &amp; made tickets better">
       <created>1647273301855</created>
@@ -184,7 +180,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647283195985</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Added local server">
+      <created>1647439705314</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1647439705314</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -221,6 +224,7 @@
     <MESSAGE value="Disabled auth" />
     <MESSAGE value="Added proxy" />
     <MESSAGE value="re-added cors" />
-    <option name="LAST_COMMIT_MESSAGE" value="re-added cors" />
+    <MESSAGE value="Added local server" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added local server" />
   </component>
 </project>
