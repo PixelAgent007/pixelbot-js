@@ -26,7 +26,7 @@ module.exports = new Listener({
         app.use(bodyParser.json());
 
         // Setting up cors
-        app.use(cors());
+        app.use(cors({ origin: 'https://apply.oskar.global', }));
 
         app.post("/v1/submit_application", (req, response) => {
             response.json({ code: 200, text: "Post successful." });

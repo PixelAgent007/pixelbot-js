@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="96a2855d-b7d6-4cb0-bc3d-395bd4818ba0" name="Changes" comment="Added local server">
-      <change beforePath="$PROJECT_DIR$/../pixelbot-js-form/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/../pixelbot-js-form/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pixelbot-js-form/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../pixelbot-js-form/src/index.js" afterDir="false" />
+    <list default="true" id="96a2855d-b7d6-4cb0-bc3d-395bd4818ba0" name="Changes" comment="idk what I did I just hope it works">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/listener/launchExpress.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/listener/launchExpress.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,7 +18,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../pixelbot-js-form" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -80,7 +79,7 @@
       <workItem from="1647357813037" duration="1427000" />
       <workItem from="1647365285830" duration="2395000" />
       <workItem from="1647439323772" duration="1865000" />
-      <workItem from="1647453143432" duration="368000" />
+      <workItem from="1647453143432" duration="885000" />
     </task>
     <task id="LOCAL-00001" summary="Ran prettier &amp; made tickets better">
       <created>1647273301855</created>
@@ -187,7 +186,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647439705314</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="idk what I did I just hope it works">
+      <created>1647453526347</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1647453526347</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -225,6 +231,7 @@
     <MESSAGE value="Added proxy" />
     <MESSAGE value="re-added cors" />
     <MESSAGE value="Added local server" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added local server" />
+    <MESSAGE value="idk what I did I just hope it works" />
+    <option name="LAST_COMMIT_MESSAGE" value="idk what I did I just hope it works" />
   </component>
 </project>
